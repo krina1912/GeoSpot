@@ -1,13 +1,7 @@
 const express = require("express");
 var bodyParser = require("body-parser");
-var axios = require("axios");
 const cors = require("cors");
-const crypto = require("crypto");
-// const mongoose = require("mongoose");
-const multer= require("multer");
-const GridFsStorage = require("multer-gridfs-storage");
-const Grid = require("gridfs-stream");
-const methodOverride = require("method-override");
+
 const mongoose = require("./db/db.js");
 var itemModel = require('./models/model'); 
 
@@ -16,9 +10,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse application/json
 app.use(bodyParser.json());
-app.use(methodOverride('_method'));
 
 
 app.use(express.json());
